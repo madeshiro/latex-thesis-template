@@ -1,0 +1,59 @@
+%! ----------------------------------------------------------------------------
+%! 
+%! File:        main.tex
+%! Description: Entry point of the LaTeX document
+%! 
+%! ----------------------------------------------------------------------------
+%!
+%! File generated on MMM YYYY by Rin Baudelet
+%! ----------------------------------------------------------------------------
+
+\makeatletter
+\renewcommand{\PackageInfo}[2]{}% Remove package information
+\renewcommand{\@font@info}[1]{}% Remove font information
+\renewcommand{\@latex@info}[1]{}% Remove LaTeX information
+\makeatother
+
+%! suppress = DocumentclassNotInRoot
+\documentclass[11pt, a4paper, english]{book} %! TODO: check document language, default set to english
+                                             %! TODO: check document class, default set to "book"
+
+\input{src/usr/usepackage} % Packages
+\input{src/usr/header}     % Fancyhdr
+
+\title{} %! TODO: setup title
+\author{Rin E. Baudelet}
+
+\hypersetup{
+	pdftitle={\thetitle},
+	pdfauthor={\theauthor},
+	pdfsubject={\thetitle},
+	pdfcreator={\theauthor},
+	pdfproducer={\theauthor},
+	pdfkeywords={}, %! TODO: setup keyword
+	pdfnewwindow=true,
+	colorlinks,
+	linkcolor={red!50!black},
+	citecolor={blue!50!black},
+	urlcolor={blue!80!black}
+}
+
+\graphicspath{ {./img/} }
+
+%{{{ TIKZ
+\input{src/usr/tikz}
+
+
+
+\AtBeginEnvironment{tikzpicture}{\shorthandoff{;}}
+%}}}
+
+% BIBLatex
+\input{src/usr/bibstyle}
+\addbibresource{src/references.bib}
+
+% Macro
+\input{src/usr/commands}
+
+% Document
+\input{src/document}

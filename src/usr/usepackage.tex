@@ -1,0 +1,88 @@
+%! ----------------------------------------------------------------------------
+%! 
+%! File:        src/usr/usepackage.tex
+%! Description: List of packages to use for this project
+%! 
+%! ----------------------------------------------------------------------------
+%!
+%! File generated on MMM YYYY by Rin Baudelet
+%! ----------------------------------------------------------------------------
+
+%{{{ packages "
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, main=french]{babel} %! TODO: change language
+\usepackage{CJKutf8}
+
+\usepackage{lmodern}
+\usepackage{microtype}
+
+% openright: chapters start on right page
+% \usepackage[inner=40mm,outer=20mm,top=25mm,bottom=25mm]{geometry}
+\usepackage[width=160mm, top=25mm, bottom=25mm]{geometry}
+
+\usepackage{fancyhdr}
+\usepackage{caption}
+\usepackage{titling}
+\usepackage{subcaption}
+\usepackage{titletoc}
+\usepackage{abstract}
+\usepackage{shapepar}
+\usepackage{emptypage}
+\usepackage{chngpage}
+\usepackage{tocloft}
+\usepackage{ragged2e}
+\usepackage{svg}
+\usepackage{wrapfig}
+
+\usepackage{minted}% before csquotes
+
+\usepackage{csquotes}
+\usepackage[
+	backend=biber,backref=true,
+	style=authoryear, citestyle=authoryear, sorting=nyt,
+	dashed=false,
+	maxbibnames=99,maxcitenames=2,uniquelist=false,
+	language=auto]{biblatex}
+\AtEveryBibitem{\clearfield{month}}
+\AtEveryBibitem{\clearfield{day}}
+\DeclareNameAlias{sortname}{last-first}
+
+\usepackage{array}
+\usepackage{float}
+\usepackage{flafter}
+\usepackage[bottom]{footmisc}
+\usepackage{multicol}
+\usepackage{pdfpages}
+
+\usepackage[section]{placeins}% prevent float to go out of its section
+
+\usepackage{amsmath}% cleveref
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{stmaryrd}
+
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{setspace}
+\usepackage{suffix}
+
+\usepackage[binary-units]{siunitx}
+
+\usepackage{algorithm}
+
+\usepackage{tikz}
+\usepackage{ifthen}
+\usepackage[tikz]{ocgx2}
+\usepackage{tikz-qtree}
+
+\usepackage{morewrites}% increase 16 open files limit (scrwfile is incompatible with titletoc)
+\usepackage{chngcntr}
+
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\usepackage[noabbrev, nameinlink]{cleveref}% after hyperref (see documentation)
+\usepackage[commentColor=black!75]{algpseudocodex}% after cleveref
+\usepackage[acronyms, section=chapter]{glossaries-extra}% after hyperref
+
+%}}}

@@ -1,3 +1,13 @@
+## IDE config folders
+.vscode/
+.idea/
+
+## Build folders
+**/build
+
+## UseLatex for CMake
+UseLATEX.cmake
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof

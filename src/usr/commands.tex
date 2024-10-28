@@ -1,0 +1,45 @@
+%! ----------------------------------------------------------------------------
+%! 
+%! File:        src/usr/commands.tex
+%! Description: Custom commands for LaTex
+%! 
+%! ----------------------------------------------------------------------------
+%!
+%! File generated on MMM YYYY by Rin Baudelet
+%! ----------------------------------------------------------------------------
+
+\newcommand*{\chapterdir}{}
+\newcommand*{\inputchd}[2]{\input{src/#1/\chapterdir/#2}}
+\newcommand*{\labelchd}[2]{\label{#1:\chapterdir/#2}}
+
+\newcommand*{\inputsrc}[1]{\input{src/\chapterdir/#1}}
+\newcommand*{\inputlst}[2]{\inputchd{lst}{#1}\caption{#2}\labelchd{lst}{#1}}
+\newcommand*{\inputfig}[2]{\centering\inputchd{fig}{#1}\caption{#2}\labelchd{fig}{#1}}
+\newcommand*{\inputalg}[2]{\caption{#2}\labelchd{alg}{#1}\inputchd{alg}{#1}}
+
+\newcommand*{\chapterx}[2]{
+	\glsresetall
+	\thispagestyle{chapter}
+	\renewcommand*{\chapterdir}{#1}
+	\addtocontents{lol}{\protect\addvspace{10pt}}
+	\addtocontents{loa}{\protect\addvspace{10pt}}
+	\startcontents[chapters]
+	{
+		\hypersetup{linkcolor=black}
+		\setcounter{tocdepth}{2}
+		\printcontents[chapters]{}{1}{}
+	}
+    \chapter{#2}\label{ch:#1}
+	\vspace*{10mm}
+	\rule{\linewidth}{0.15mm}
+	\tikzsetexternalprefix{buildfig/\chapterdir _}
+}
+\WithSuffix\newcommand\chapterx*[1]{%
+	\glsresetall
+	\chapter*{#1}
+	\addcontentsline{toc}{chapter}{#1}
+	\markboth{#1}{#1}
+}
+
+% \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}

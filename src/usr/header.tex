@@ -1,0 +1,32 @@
+%! ----------------------------------------------------------------------------
+%! 
+%! File:        src/usr/header.tex
+%! Description: Fancyhdr configuration
+%! 
+%! ----------------------------------------------------------------------------
+%!
+%! File generated on MMM YYYY by Rin Baudelet
+%! ----------------------------------------------------------------------------
+
+\fancypagestyle{chapter}{
+	\fancyhf{}
+	\fancyfoot[LE,RO]{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+
+\fancypagestyle{plain}{
+	\fancyhf{}
+	\fancyhead[LE,RO]{\nouppercase{\rightmark}}
+	\fancyfoot[LE,RO]{\thepage}
+	\renewcommand{\headrulewidth}{.4pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
+
+\fancypagestyle{content}{
+	\fancyhf{}
+	\fancyhead[LE,RO]{\thesection~\rightmark}
+	\fancyfoot[LE,RO]{\thepage}
+	\renewcommand{\headrulewidth}{.4pt}
+	\renewcommand{\footrulewidth}{0pt}
+}
